@@ -334,3 +334,133 @@ body {
   color: #aaa;
 }
 
+/* ===== CONFIG CELULARES ===== */
+
+@media (max-width: 768px) {
+
+  /* ===== HEADER ===== */
+  .header {
+    padding: 14px 16px;
+  }
+
+  .logo {
+    height: 46px;
+  }
+
+  /* ===== CONTADOR ===== */
+  .countdown {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .time-box {
+    width: 70px;
+    height: 78px;
+    font-size: 22px;
+  }
+
+  /* ===== MARQUEE ===== */
+  .marquee {
+    height: 54px;
+    font-size: 16px;
+  }
+
+  /* ===== SLIDER ===== */
+  .slider {
+    height: 300px;   /* NÃO achata */
+    border-radius: 16px;
+  }
+
+  .slides img {
+    height: 300px;
+  }
+
+  /* ===== MAIN ===== */
+  .main {
+    flex-direction: column;
+    gap: 28px;
+    padding: 16px;
+  }
+
+  /* ===== BUY BOX ===== */
+  .buy-box {
+    width: 100%;
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  /* ===== OPÇÕES +3 +10 ===== */
+  .options {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .options button {
+    height: 68px;
+    font-size: 20px;
+  }
+
+  /* ===== TAGS ===== */
+  .tag-popular {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .tag-off {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  /* ===== QUANTIDADE ===== */
+  .qty {
+    gap: 22px;
+  }
+
+  .qty button {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+
+  .qty span {
+    font-size: 26px;
+  }
+
+  /* ===== COMPRAR ===== */
+  .buy {
+    height: 72px;
+    font-size: 22px;
+  }
+
+}
+
+/* ===== CEL MENORES===== */
+
+@media (max-width: 400px) {
+
+  .slider {
+    height: 260px;
+  }
+
+  .slides img {
+    height: 260px;
+  }
+
+  .options button {
+    height: 62px;
+    font-size: 18px;
+  }
+
+  .buy {
+    height: 68px;
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+
