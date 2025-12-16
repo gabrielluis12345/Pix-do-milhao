@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pix do Milhão</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER (SÓ LOGO) -->
+    <header class="header">
+        <img src="img/logo.png" class="logo">
+    </header>
+
+    <!-- CONTADOR -->
+    <section class="countdown">
+        <span class="label">PRÓXIMO SORTEIO EM:</span>
+
+        <div class="timer">
+            <div class="time-box">
+                <span id="hours">22</span>
+                <small>HORAS</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">25</span>
+                <small>MINUTOS</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">12</span>
+                <small>SEGUNDOS</small>
+            </div>
+        </div>
+
+        <span class="date">16/12/2025 às 21:00</span>
+    </section>
+
+
+    <!-- FAIXA AZUL ROLANDO -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
+                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
+                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
+                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
+            </div>
+
+            <!-- DUPLICADO -->
+            <div class="marquee-content">
+                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
+                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
+                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
+                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="main">
+
+        <!-- SLIDER -->
+        <div class="slider">
+            <button class="nav left" onclick="prev()">❮</button>
+
+            <div class="slides">
+                <img src="wid1.PNG">
+                <img src="wid2.PNG">
+
+            </div>
+
+            <button class="nav right" onclick="next()">❯</button>
+        </div>
+
+        <!-- PAINEL DIREITO -->
+        <div class="buy-box">
+            <div class="discount-badge">16% OFF</div>
+
+            <div class="options">
+                <button onclick="addQty(3)">+3</button>
+                <button class="popular popular-btn" onclick="addQty(10)">
+                    <span class="tag-popular">POPULAR</span>
+                    +10
+                </button>
+
+                <button onclick="addQty(15)">+15</button>
+                <button onclick="addQty(20)">+20</button>
+                <button onclick="addQty(30)">+30</button>
+                <button onclick="addQty(50)">+50</button>
+            </div>
+
+            <div class="qty">
+                <button onclick="changeQty(-1)">-</button>
+                <span id="qty">3</span>
+                <button onclick="changeQty(1)">+</button>
+            </div>
+
+            <button class="buy" onclick="irCheckout()">
+                🛒 COMPRAR <span id="price">R$ 6,65</span>
+            </button>
+
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-top">
+            <div class="footer-left">
+                <img src="img/logo-white.png" class="footer-logo" alt="Pix do Milhão">
+
+                <div class="social">
+                    <img src="img/icon-instagram.svg">
+                    <img src="img/icon-facebook.svg">
+                    <img src="img/icon-youtube.svg">
+                </div>
+
+                <p class="footer-text">
+                    Sorteios lastreados por Títulos de Capitalização, da Modalidade Incentivo,
+                    emitidos pela VIA Capitalização S/A, inscritos no CNPJ sob nº 88.076.302/0001-94,
+                    e aprovados pela SUSEP através do registro na SUSEP Sorteio nº
+                    15414.672014/2025-00 e 15414.672017/2025-35.
+                    <br><br>
+                    O valor das premiações aqui indicadas são líquidos, já descontado o devido
+                    imposto de renda de 25%. O registro deste plano na SUSEP não implica, por parte
+                    da Autarquia, incentivo ou recomendação às suas negociações.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-line"></div>
+
+        <div class="footer-middle">
+            <div class="issuer">
+                <span>Títulos emitidos por:</span>
+                <img src="img/viacap.png" class="issuer-logo">
+            </div>
+
+            <img src="img/google-safe.png" class="safe-logo">
+        </div>
+
+        <div class="footer-line"></div>
+
+        <div class="footer-bottom">
+            <p>
+                Termos de Uso &nbsp;&nbsp; Política de Privacidade &nbsp;&nbsp;
+                Perguntas Frequentes &nbsp;&nbsp; Jogo Responsável &nbsp;&nbsp;
+                Contato &nbsp;&nbsp; Sac ViaCap - (51) 3303-3851 &nbsp;&nbsp;
+                Ouvidoria ViaCap - 0800 874 1505 &nbsp;&nbsp;
+                PIX DO MILHÃO – 30.682.309/0001-70
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
