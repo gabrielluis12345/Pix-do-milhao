@@ -1,5 +1,5 @@
 const express = require("express");
-const fetch = require("node-fetch");
+const fetch = global.fetch; // Node 18+
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
@@ -155,3 +155,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
   console.log("🚀 Servidor rodando na porta " + PORT)
 );
+
