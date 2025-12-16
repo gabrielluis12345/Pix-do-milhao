@@ -614,6 +614,7 @@ body {
   border-radius: 14px;
   font-size: 18px;
   font-weight: 600;
+  border: none;
   color: #333;
   transition: all .25s ease;
 }
@@ -713,6 +714,7 @@ body {
     font-size: 22px;
   }
 }
+
 
 
 
