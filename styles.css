@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
 }
 
 html, body {
@@ -211,116 +212,141 @@ body {
 /* BUY BOX */
 .buy-box {
   background: #fff;
-  padding: 20px;
-  width: 280px;
-  border-radius: 10px;
+  padding: 26px 22px 22px;
+  width: 336px;              /* 👈 MAIS LARGO (igual print) */
+  border-radius: 18px;
   position: relative;
 }
 
+
 .discount-badge {
   position: absolute;
-  top: -18px;        /* sobe o selo */
-  right: 12px;      /* canto direito */
-  background: #1f5cff;
+  top: 12px;
+  right: 14px;
+  background: #2b4bff;
   color: #fff;
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  z-index: 10;
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
 }
+
+
 
 
 .options {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 10px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;                 /* 👈 MAIS ESPAÇO ENTRE */
+  margin-top: 28px;
+  margin-bottom: 26px;
 }
+
 
 .options button {
-  padding: 14px 0;
-  font-size: 15px;
-  border-radius: 10px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  min-width: 96px;
+  border-radius: 14px;
+  font-size: 16.5px;
+  font-weight: 700;
+  transition: all .2s ease;
+}
+
+.options button:not(.popular-btn):hover {
+  background: #dcdcdc;
+  transform: translateY(-1px);
 }
 
 
-.popular {
-  background: orange;
-  color: #fff;
-}
+
+
+/* botão +10 estado normal */
 .popular-btn {
-  position: relative;
-  font-weight: bold;
+  background: #e5e5e5;
+  color: #000;
+  transition: all .25s ease;
 }
+
+/* hover APENAS no +10 */
+.popular-btn:hover {
+  
+  color: #ff7a00;
+  
+  box-shadow: 0 8px 20px rgba(255,122,0,.35);
+}
+
 
 .tag-popular {
   position: absolute;
-  top: -10px;
+  top: -10px;               /* altura real da referência */
   left: 50%;
   transform: translateX(-50%);
   background: #ff7a00;
   color: #fff;
   font-size: 10px;
-  padding: 3px 8px;
-  border-radius: 10px;
-  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .4px;
   white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
 }
+
 
 
 .qty {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1e1e1e;
+  background: #1c1c1c;
   padding: 14px;
-  border-radius: 10px;
-  margin: 15px 0;
+  border-radius: 14px;
+  margin: 18px 0;
 }
 
-
 .qty button {
+  width: 46px;
+  height: 46px;
+  font-size: 24px;
   background: #F7D547;
-  border: none;
-  width: 42px;
-  height: 42px;
-  font-size: 22px;
-  font-weight: bold;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 #qty {
   background: #e6e6e6;
-  color: #000;
-  width: 60px;
-  height: 40px;
+  width: 70px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 8px;
+  line-height: 1;
 }
+
+
 
 
 .buy {
   width: 100%;
-  margin-top: 15px;
-  background: #3CA617;
+  height: 62px;
+  background: #39b900;
   color: #fff;
-  border: none;
-  padding: 18px;
-  font-size: 16px;
-  border-radius: 10px;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: pulseSoft 2.8s ease-in-out infinite;
-
+  padding: 0 22px;
+  animation: pulseSoft 2.6s ease-in-out infinite;
 }
+
 @keyframes pulseSoft {
   0% {
     transform: scale(1);
@@ -337,6 +363,33 @@ body {
     box-shadow: 0 0 0 rgba(0,0,0,0);
   }
 }
+
+
+/* 👈 MOBILE NAO QUEBRA*/
+
+@media (max-width: 768px) {
+
+  .buy-box {
+    width: 100%;
+  }
+
+  .options button {
+    min-width: unset;
+    height: 64px;
+    font-size: 20px;
+  }
+
+  .buy {
+    height: 72px;
+    font-size: 22px;
+  }
+
+  .slides img {
+    object-fit: contain;
+  }
+}
+
+/* 👈 FOOTER*/
 
 .footer {
   background: #1c1c1c;
@@ -524,11 +577,142 @@ body {
 
 
 
+/* ============================= */
+/* AJUSTE PIXEL PERFECT BUY BOX */
+/* ============================= */
+
+.buy-box {
+  padding-top: 40px; /* desce tudo */
+}
+
+/* ---------- TAG 16% OFF ---------- */
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #1e40ff;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px; /* 🔥 aqui é o segredo */
+}
 
 
+/* ---------- GRID DE OPÇÕES ---------- */
+.options {
+  margin-top: 22px;
+  row-gap: 18px;
+  column-gap: 18px;
+  position: relative;
+}
 
+/* ---------- BOTÕES +3 +10 ---------- */
+.options button {
+  height: 54px;
+  background: #e6e6e6;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  transition: all .25s ease;
+}
 
+/* hover padrão */
+.options button:hover {
+  background: #dcdcdc;
+}
 
+/* ---------- BOTÃO +10 (POPULAR) ---------- */
+.popular-btn {
+  background: #e6e6e6;
+  color: #333;
+  position: relative;
+}
+
+/* hover só do +10 */
+.popular-btn:hover {
+  
+  color: #ff7a00;
+}
+
+/* ---------- TAG POPULAR (FORA DO BOTÃO) ---------- */
+/* TAG POPULAR */
+.popular-btn .tag-popular {
+  position: absolute;
+  top: -14px;              /* distância exata da foto */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff7a00;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ---------- QUANTIDADE ---------- */
+.qty {
+  margin-top: 26px;
+  padding: 18px 20px;
+  border-radius: 18px;
+}
+
+/* botões + - */
+.qty button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* número CENTRALIZADO */
+#qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ---------- BOTÃO COMPRAR ---------- */
+.buy {
+  margin-top: 22px;
+  height: 66px;
+  border-radius: 16px;
+  padding: 0 26px;
+  font-size: 18px;
+}
+
+/* ============================= */
+/* MOBILE — MESMO VISUAL DO DESKTOP */
+/* ============================= */
+@media (max-width: 768px) {
+
+  .buy-box {
+    padding-top: 42px;
+  }
+
+  .discount-badge {
+    top: 12px;
+    right: 14px;
+  }
+
+  .options {
+    row-gap: 16px;
+    column-gap: 16px;
+  }
+
+  .options button {
+    height: 62px;
+    font-size: 20px;
+  }
+
+  .buy {
+    height: 72px;
+    font-size: 22px;
+  }
+}
 
 
 
