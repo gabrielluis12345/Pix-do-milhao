@@ -3,7 +3,7 @@ const slides = document.querySelector('.slides');
 const total = slides.children.length;
 
 function show() {
-  const slideWidth = document.querySelector('.slider').clientWidth;
+  const slideWidth = document.querySelector('.slider').offsetWidth;
   slides.style.transform = `translateX(-${index * slideWidth}px)`;
 }
 
@@ -108,3 +108,4 @@ function irCheckout() {
   // redireciona para o checkout já existente
   window.location.href = `/checkout.html?qtd=${quantity}&valor=${total}`;
 }
+
