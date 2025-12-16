@@ -460,6 +460,7 @@ body {
   .options button {
     height: 68px;
     font-size: 20px;
+    color: #000000
   }
 
   /* ===== TAGS ===== */
@@ -520,6 +521,7 @@ body {
     font-size: 20px;
   }
 }
+
 
 
 
