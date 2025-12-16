@@ -16,7 +16,7 @@ const TOKEN = "APP_USR-5555886528536836-120817-65519b58bbfe00e9d566f1e1c795ac69-
 
 // Google Planilha
 const PLANILHA_URL =
-  "https://script.google.com/macros/s/AKfycbzoY1EQg1_94KDH_iV03i0j04ICjxmHK-bks2AuxTE2ujJA8ygp8JKbnvHTOhQ9IaQolQ/exec";
+  "https://script.google.com/macros/s/AKfycby2Iv7N_Iwtd4_d11hxpQx8RzTXCy3qkSI-rdWDGadaXKoN88yQoKyJVhPXtUgLdphZfw/exec";
 
 // ===============================
 // 🏠 HOME
@@ -155,4 +155,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
   console.log("🚀 Servidor rodando na porta " + PORT)
 );
+
 
