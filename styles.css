@@ -454,6 +454,7 @@ body {
   .options {
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
+    color: #000000
   }
 
   .options button {
@@ -481,10 +482,12 @@ body {
     width: 52px;
     height: 52px;
     font-size: 26px;
+    color: #000000
   }
 
   .qty span {
     font-size: 26px;
+    color: #000000
   }
 
   /* ===== COMPRAR ===== */
@@ -517,6 +520,7 @@ body {
     font-size: 20px;
   }
 }
+
 
 
 
