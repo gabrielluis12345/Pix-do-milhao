@@ -123,8 +123,8 @@ body {
 .slider {
   width: 100%;
   max-width: 1100px;
-  height: 520px;              /* ALTURA CORRETA PC */
-  margin: auto;
+  aspect-ratio: 16 / 9; /* ou 21/9 se for banner largo */
+  height: auto;              /* ALTURA CORRETA PC */
   overflow: hidden;
   border-radius: 22px;
 }
@@ -517,6 +517,7 @@ body {
     font-size: 20px;
   }
 }
+
 
 
 
