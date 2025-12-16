@@ -121,23 +121,26 @@ body {
 
 /* SLIDER */
 .slider {
-  position: relative;
-  width: 820px;
-  height: 460px;
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 18px;
 }
 
 .slides {
   display: flex;
-  transition: transform .5s ease;
+  width: 100%;
+  height: 100%;
 }
 
 .slides img {
-  width: 820px;
-  height: 460px;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: cover; /* ESSENCIAL */
 }
+
 
 .nav {
   position: absolute;
@@ -154,6 +157,16 @@ body {
 
 .left { left: 10px; }
 .right { right: 10px; }
+
+/* NAO ESTOURAR */
+
+.main,
+.buy-box,
+.options,
+.qty {
+  max-width: 100%;
+}
+
 
 /* BUY BOX */
 .buy-box {
@@ -464,6 +477,7 @@ body {
     font-size: 20px;
   }
 }
+
 
 
 
