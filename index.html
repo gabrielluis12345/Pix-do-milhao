@@ -15,145 +15,133 @@
         <img src="logopix-removebg-preview.png" class="logo">
     </header>
 
-   
-
-
     <!-- CONTEÚDO PRINCIPAL -->
     <section class="main">
 
         <!-- SLIDER -->
         <div class="slider">
             <button class="nav left" onclick="prev()">❮</button>
-
             <div class="slides">
                 <img src="wid1.PNG">
                 <img src="wid2.PNG">
-
             </div>
-
             <button class="nav right" onclick="next()">❯</button>
         </div>
 
-      <!-- PAINEL DIREITO / AÇÃO 1 -->
-<div class="buy-box">
-    <div class="discount-badge">16% OFF</div>
+        <!-- PAINEL DIREITO / AÇÃO 1 -->
+        <div class="buy-box">
+            <div class="discount-badge">16% OFF</div>
 
-    <div class="options">
-        <button onclick="addQty('top',3)">+3</button>
-        <button class="popular popular-btn" onclick="addQty('top',10)">
-            <span class="tag-popular">POPULAR</span>
-            +10
-        </button>
-        <button onclick="addQty('top',15)">+15</button>
-        <button onclick="addQty('top',20)">+20</button>
-        <button onclick="addQty('top',30)">+30</button>
-        <button onclick="addQty('top',50)">+50</button>
-    </div>
+            <div class="options">
+                <button onclick="addQty('top',3)">+3</button>
+                <button class="popular popular-btn" onclick="addQty('top',10)">
+                    <span class="tag-popular">POPULAR</span>
+                    +10
+                </button>
+                <button onclick="addQty('top',15)">+15</button>
+                <button onclick="addQty('top',20)">+20</button>
+                <button onclick="addQty('top',30)">+30</button>
+                <button onclick="addQty('top',50)">+50</button>
+            </div>
 
-    <div class="qty">
-        <button onclick="changeQty('top',-1)">-</button>
-        <span id="qty-top">3</span>
-        <button onclick="changeQty('top',1)">+</button>
-    </div>
+            <div class="qty">
+                <button onclick="changeQty('top',-1)">-</button>
+                <span id="qty-top">3</span>
+                <button onclick="changeQty('top',1)">+</button>
+            </div>
 
-    <button class="buy" onclick="irCheckout('top')">
-        🛒 COMPRAR <span id="price-top">R$ 6,65</span>
-    </button>
-</div>
+            <button class="buy" onclick="irCheckout('top')">
+                🛒 COMPRAR <span id="price-top">R$ 6,65</span>
+            </button>
+        </div>
 
+    </section>
 
-
-    <!-- ================= PRODUTO DE BAIXO ================= -->
+    <!-- ================= PRODUTO DE BAIXO / AÇÃO 2 ================= -->
     <section class="produto-card">
 
-  <!-- HEADER -->
-  <div class="produto-header">
-  <div class="header-left">
-    <div class="logopremio">
-      <img src="logo_premiada.png" alt="Terça Premiada">
-    </div>
-    <h1>Terça Premiada</h1>
-  </div>
+        <!-- HEADER -->
+        <div class="produto-header">
+            <div class="header-left">
+                <div class="logopremio">
+                    <img src="logo_premiada.png" alt="Terça Premiada">
+                </div>
+                <h1>Terça Premiada</h1>
+            </div>
+            <span class="subtitle">
+                Prêmios toda terça com chances que cabem no seu bolso.
+            </span>
+        </div>
 
-  <span class="subtitle">
-    Prêmios toda terça com chances que cabem no seu bolso.
-  </span>
-</div>
+        <!-- BANNER -->
+        <div class="produto-banner">
+            <img src="WID PREMIADA.PNG" alt="Terça Premiada">
+        </div>
 
-  <!-- BANNER -->
-  <div class="produto-banner">
-    <img src="WID PREMIADA.PNG" alt="Terça Premiada">
-  </div>
+        <!-- INFO AMARELA -->
+        <div class="info-row">
+            <div class="info-box">
+                <span>Edição nº</span>
+                <strong>004</strong>
+            </div>
+            <div class="info-box">
+                <span>Sorteio em</span>
+                <strong id="countdown-bottom">17 minutos</strong>
+            </div>
+        </div>
 
-  <!-- INFO AMARELA -->
-<div class="info-row">
-    <div class="info-box">
-        <span>Edição nº</span>
-        <strong>004</strong>
-    </div>
-    <div class="info-box">
-        <span>Sorteio em</span>
-        <strong id="countdown">17 minutos</strong>
-    </div>
-</div>
+        <!-- DETALHES -->
+        <div class="produto-detalhes">
+            <div>
+                <span class="label">HOJE</span>
+                <p class="valor">ÀS 21:00</p>
+            </div>
+            <div>
+                <span class="label">VALOR</span>
+                <p class="valor amarelo">R$ 0,20</p>
+            </div>
+        </div>
 
-  <!-- DETALHES -->
-  <div class="produto-detalhes">
-    <div>
-      <span class="label">HOJE</span>
-      <p class="valor">ÀS 21:00</p>
-    </div>
-    <div>
-      <span class="label">VALOR</span>
-      <p class="valor amarelo">R$ 0,20</p>
-    </div>
-  </div>
+        <p class="produto-desc">
+            Terça Premiada PDM - 16/12/2025 - ED 004
+        </p>
 
-  <p class="produto-desc">
-    Terça Premiada PDM - 16/12/2025 - ED 004
-  </p>
+        <!-- BOTÕES -->
+        <div class="quantidade-botoes">
+            <button onclick="addQty('bottom',5)">+5</button>
+            <button class="popular-btn" onclick="addQty('bottom',10)">
+                <span class="tag-popular">POPULAR</span>
+                +10
+            </button>
+            <button onclick="addQty('bottom',15)">+15</button>
+            <button onclick="addQty('bottom',50)">+50</button>
+            <button onclick="addQty('bottom',100)">+100</button>
+        </div>
 
-  <!-- BOTÕES (FUNÇÕES ORIGINAIS) -->
-  <div class="quantidade-botoes">
-    <button onclick="addQty('bottom',5)">+5</button>
+        <!-- CONTADOR -->
+        <div class="qty">
+            <button onclick="changeQty('bottom',-1)">-</button>
+            <span id="qty-bottom">50</span>
+            <button onclick="changeQty('bottom',1)">+</button>
+        </div>
 
-    <button class="popular-btn" onclick="addQty('bottom',10)">
-      <span class="tag-popular">POPULAR</span>
-      +10
-    </button>
+        <!-- COMPRAR -->
+        <button class="buy" onclick="irCheckout('bottom')">
+            🛒 COMPRAR
+            <span id="price-bottom">R$ 10,00</span>
+        </button>
 
-    <button onclick="addQty('bottom',15)">+15</button>
-    <button onclick="addQty('bottom',50)">+50</button>
-    <button onclick="addQty('bottom',100)">+100</button>
-  </div>
-
-  <!-- CONTADOR (FUNÇÕES ORIGINAIS) -->
-  <div class="qty">
-    <button onclick="changeQty('bottom',-1)">-</button>
-    <span id="qty-bottom">50</span>
-    <button onclick="changeQty('bottom',1)">+</button>
-  </div>
-
-  <!-- COMPRAR (FUNÇÃO ORIGINAL) -->
-  <button class="buy" onclick="irCheckout('bottom')">
-    🛒 COMPRAR
-    <span id="price-bottom">R$ 10,00</span>
-  </button>
-
-</section>
+    </section>
 
     <footer class="footer">
-
         <div class="footer-top">
             <div class="footer-left">
                 <img src="logo_footer.png" class="footer-logo" alt="Pix do Milhão">
-
                 <div class="social">
                     <img src="img/icon-instagram.svg">
                     <img src="img/icon-facebook.svg">
                     <img src="img/icon-youtube.svg">
                 </div>
-
                 <p class="footer-text">
                     Sorteios lastreados por Títulos de Capitalização, da Modalidade Incentivo,
                     emitidos pela VIA Capitalização S/A, inscritos no CNPJ sob nº 88.076.302/0001-94,
@@ -174,7 +162,6 @@
                 <span>Títulos emitidos por:</span>
                 <img src="viacap.png" class="issuer-logo">
             </div>
-
             <img src="seal-google-safe.png" class="safe-logo">
         </div>
 
@@ -192,14 +179,9 @@
 
     </footer>
 
-
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
 
 
 
