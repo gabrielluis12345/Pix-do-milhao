@@ -715,6 +715,225 @@ body {
   }
 }
 
+/* =====================================
+   POSICIONAMENTO DA AÇÃO 2 (produto-card)
+   ===================================== */
+
+/* DESKTOP */
+.produto-card {
+  max-width: 420px;
+  margin-top: 40px;
+
+  /* força ficar à esquerda */
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* garante que o main não centralize tudo */
+@media (min-width: 769px) {
+  .produto-card {
+    align-self: flex-start;
+  }
+}
+
+/* =====================================
+   MOBILE – AÇÃO 2 CENTRALIZADA EMBAIXO
+   ===================================== */
+
+@media (max-width: 768px) {
+
+  .produto-card {
+    margin: 30px auto 0 auto;
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+.produto-card {
+  max-width: 1200px;
+  width: 1200px;
+  margin: auto;
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.produto-header {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logopremio img {
+  width: 42px;
+}
+
+.produto-header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.subtitle {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+
+/* BANNER */
+.produto-banner img {
+  width: 100%;
+  border-radius: 14px;
+  margin: 14px 0;
+}
+
+/* INFO AMARELA */
+.info-row {
+  display: flex;
+  gap: 10px;
+}
+
+.info-box {
+  flex: 1;
+  background: #ffd84d;
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+}
+
+.info-box span {
+  font-size: 12px;
+}
+
+.info-box strong {
+  display: block;
+  font-size: 14px;
+}
+
+/* DETALHES */
+.produto-detalhes {
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0;
+}
+
+.label {
+  font-size: 12px;
+  color: #999;
+}
+
+.valor {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.valor.amarelo {
+  color: #f4b400;
+}
+
+/* DESCRIÇÃO */
+.produto-desc {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+/* BOTÕES */
+.quantidade-botoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.quantidade-botoes button {
+  background: #eee;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+  position: relative;
+}
+
+/* POPULAR */
+.popular-btn .tag-popular {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: orange;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* QTY */
+.qty {
+  margin: 14px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background: #111;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.qty button {
+  background: #ffd84d;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.qty span {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* COMPRAR */
+.buy {
+  width: 100%;
+  background: linear-gradient(90deg, #00c853, #00a844);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* PADRÃO (mobile) */
+.produto-card {
+  max-width: 420px;
+  margin: 20px auto;
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .produto-card {
+    margin: 20px 0 0 40px; /* esquerda */
+  }
+}
+
+
 
 
 
