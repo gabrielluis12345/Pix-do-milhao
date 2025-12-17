@@ -908,7 +908,7 @@ body {
 
 /* COMPRAR */
 .buy {
-  width: 100%;
+  width: 90%;
   background: linear-gradient(90deg, #00c853, #00a844);
   color: #fff;
   border: none;
@@ -932,6 +932,7 @@ body {
     margin: 20px 0 0 40px; /* esquerda */
   }
 }
+
 
 
 
