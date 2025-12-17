@@ -92,46 +92,43 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// ============================
-// CONTADOR 2
+// ================= CONTADOR AÇÃO 2 =================
+let minutosRestantes = 8640; // 6 dias
+const countdownEl = document.getElementById('countdown-bottom');
 
-
-  let minutosRestantes = 8640; // 6 dias
-
-  const countdownEl = document.getElementById('countdown');
-
-  function atualizarCountdown() {
+function atualizarCountdown() {
     if (minutosRestantes <= 0) {
-      countdownEl.innerText = 'Sorteio iniciado';
-      clearInterval(timer);
-      return;
+        countdownEl.innerText = 'Sorteio iniciado';
+        clearInterval(timer);
+        return;
     }
 
-    // CONVERSÃO
     const dias = Math.floor(minutosRestantes / 1440);
     const horas = Math.floor((minutosRestantes % 1440) / 60);
     const minutos = minutosRestantes % 60;
 
     let texto = '';
-
     if (dias > 0) {
-      texto = `${dias} dia${dias > 1 ? 's' : ''}`;
+        texto = `${dias} dia${dias > 1 ? 's' : ''}`;
     } else if (horas > 0) {
-      texto = `${horas} hora${horas > 1 ? 's' : ''}`;
+        texto = `${horas} hora${horas > 1 ? 's' : ''}`;
     } else {
-      texto = `${minutos} minuto${minutos > 1 ? 's' : ''}`;
+        texto = `${minutos} minuto${minutos > 1 ? 's' : ''}`;
     }
 
     countdownEl.innerText = texto;
     minutosRestantes--;
-  }
+}
 
-  atualizarCountdown();
-  const timer = setInterval(atualizarCountdown, 60000);
+// Atualiza imediatamente
+atualizarCountdown();
+// Atualiza a cada 1 minuto
+const timer = setInterval(atualizarCountdown, 60000);
 
 
 // ================= SLIDER AUTOMÁTICO =================
-const slides = document.querySelectorAll(".slides img");
+const slidesContainer = document.querySelector(".slides");
+const slides = slidesContainer.querySelectorAll("img");
 let currentSlide = 0;
 
 function showSlide(index) {
@@ -140,10 +137,10 @@ function showSlide(index) {
   });
 }
 
-// Mostra o primeiro slide ao carregar
+// Inicializa o slider
 showSlide(currentSlide);
 
-// Funções para os botões
+// Botões
 function next() {
   currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);
@@ -154,10 +151,11 @@ function prev() {
   showSlide(currentSlide);
 }
 
-// Troca automática a cada 3 segundos (3000 ms)
+// Troca automática a cada 3 segundos
 setInterval(() => {
   next();
-}, 3000);
+}, 2000);
+
 
 
 
