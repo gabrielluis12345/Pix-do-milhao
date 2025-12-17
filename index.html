@@ -34,35 +34,33 @@
             <button class="nav right" onclick="next()">❯</button>
         </div>
 
-       <!-- PAINEL DIREITO -->
-        <div class="buy-box">
-            <div class="discount-badge">16% OFF</div>
+      <!-- PAINEL DIREITO / AÇÃO 1 -->
+<div class="buy-box">
+    <div class="discount-badge">16% OFF</div>
 
-            <div class="options">
-                <button onclick="addQty(3)">+3</button>
-                <button class="popular popular-btn" onclick="addQty(10)">
-                    <span class="tag-popular">POPULAR</span>
-                    +10
-                </button>
+    <div class="options">
+        <button onclick="addQty('top',3)">+3</button>
+        <button class="popular popular-btn" onclick="addQty('top',10)">
+            <span class="tag-popular">POPULAR</span>
+            +10
+        </button>
+        <button onclick="addQty('top',15)">+15</button>
+        <button onclick="addQty('top',20)">+20</button>
+        <button onclick="addQty('top',30)">+30</button>
+        <button onclick="addQty('top',50)">+50</button>
+    </div>
 
-                <button onclick="addQty(15)">+15</button>
-                <button onclick="addQty(20)">+20</button>
-                <button onclick="addQty(30)">+30</button>
-                <button onclick="addQty(50)">+50</button>
-            </div>
+    <div class="qty">
+        <button onclick="changeQty('top',-1)">-</button>
+        <span id="qty-top">3</span>
+        <button onclick="changeQty('top',1)">+</button>
+    </div>
 
-            <div class="qty">
-                <button onclick="changeQty(-1)">-</button>
-                <span id="qty">3</span>
-                <button onclick="changeQty(1)">+</button>
-            </div>
+    <button class="buy" onclick="irCheckout('top')">
+        🛒 COMPRAR <span id="price-top">R$ 6,65</span>
+    </button>
+</div>
 
-            <button class="buy" onclick="irCheckout('bottom')">
-                🛒 COMPRAR <span id="price">R$ 6,65</span>
-            </button>
-
-
-    </section>
 
     <!-- ================= PRODUTO DE BAIXO ================= -->
     <section class="produto-card">
@@ -198,6 +196,7 @@
 </body>
 
 </html>
+
 
 
 
