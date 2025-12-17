@@ -1,74 +1,73 @@
-let index = 0;
-const slides = document.querySelector('.slides');
-const total = slides.children.length;
+// ============================
+// PRODUTOS (2 AÇÕES SEPARADAS)
+// ============================
 
-function show() {
-  const slideWidth = document.querySelector('.slider').offsetWidth;
-  slides.style.transform = `translateX(-${index * slideWidth}px)`;
+const products = {
+  top: {
+    qty: 3,
+    price: 6.65,
+    min: 1, // Não há limite para o produto de cima
+    qtyEl: document.getElementById("qty-top"),
+    priceEl: document.getElementById("price-top")
+  },
+  bottom: {
+    qty: 30, // Começa com 30
+    price: 0.20,
+    min: 30, // Mínimo = 30
+    qtyEl: document.getElementById("qty-bottom"),
+    priceEl: document.getElementById("price-bottom")
+  }
+};
+
+// Atualiza a interface de quantidade e preço
+function updateUI(key) {
+  const p = products[key];
+  if (!p.qtyEl || !p.priceEl) return;
+
+  // Garante que a quantidade nunca seja menor que o limite mínimo
+  if (p.qty < p.min) p.qty = p.min;
+
+  p.qtyEl.innerText = p.qty;
+  const total = (p.qty * p.price).toFixed(2).replace('.', ',');
+  p.priceEl.innerText = `R$ ${total}`;
 }
 
+// Função para alterar a quantidade com + ou -
+function changeQty(key, value) {
+  const p = products[key];
+  p.qty += value;
 
-function next() {
-  index = (index + 1) % total;
-  show();
+  // Garante que a quantidade nunca seja menor que o limite mínimo
+  if (p.qty < p.min) p.qty = p.min;
+
+  updateUI(key);
 }
 
-function prev() {
-  index = (index - 1 + total) % total;
-  show();
+// Função para alterar a quantidade com os botões rápidos (+3, +10, etc)
+function addQty(key, value) {
+  const p = products[key];
+  if (p.qty < p.min) p.qty = p.min; // Garante que a quantidade nunca fique abaixo do mínimo
+  p.qty += value;
+  updateUI(key);
 }
 
-setInterval(next, 4000);
+// Função para o checkout
+function irCheckout(key) {
+  const p = products[key];
+  const total = (p.qty * p.price).toFixed(2);
 
-// =================================
-// CONTROLE DE QUANTIDADE E PREÇO
-// =================================
-
-// quantidade inicial
-let quantity = 3;
-
-// valor por número
-const pricePerUnit = 6.65;
-
-// elementos da tela
-const qtyEl = document.getElementById("qty");
-const priceEl = document.getElementById("price");
-
-// atualiza quantidade e valor
-function updateUI() {
-  if (!qtyEl || !priceEl) return;
-
-  qtyEl.innerText = quantity;
-
-  const total = (quantity * pricePerUnit).toFixed(2);
-  priceEl.innerText = `R$ ${total.replace('.', ',')}`;
+  window.location.href = `/checkout.html?qtd=${p.qty}&valor=${total}`;
 }
 
-// botão + e -
-function changeQty(value) {
-  quantity += value;
-
-  if (quantity < 1) quantity = 1;
-
-  updateUI();
-}
-
-// botões rápidos +3 +10 +15...
-function addQty(value) {
-  quantity += value;
-  updateUI();
-}
-
-// inicia com valores corretos
-updateUI();
-
+// Inicializa as quantidades e preços
+updateUI("top");
+updateUI("bottom");
 
 // ============================
-// CONTADOR REAL (H:M:S)
+// CONTADOR (H:M:S)
 // ============================
 
 const targetDate = new Date("2025-12-16T21:00:00");
-
 const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
@@ -85,27 +84,52 @@ function updateCountdown() {
   }
 
   const totalSeconds = Math.floor(diff / 1000);
-
-  const hours = Math.floor((totalSeconds / 3600) % 24);
-  const minutes = Math.floor((totalSeconds / 60) % 60);
-  const seconds = totalSeconds % 60;
-
-  hoursEl.innerText = String(hours).padStart(2, "0");
-  minutesEl.innerText = String(minutes).padStart(2, "0");
-  secondsEl.innerText = String(seconds).padStart(2, "0");
+  hoursEl.innerText = String(Math.floor((totalSeconds / 3600) % 24)).padStart(2, "0");
+  minutesEl.innerText = String(Math.floor((totalSeconds / 60) % 60)).padStart(2, "0");
+  secondsEl.innerText = String(totalSeconds % 60).padStart(2, "0");
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
 // ============================
-// IR PARA CHECKOUT
-// ============================
+// CONTADOR 2
 
-function irCheckout() {
-  const total = (quantity * pricePerUnit).toFixed(2);
 
-  // redireciona para o checkout já existente
-  window.location.href = `/checkout.html?qtd=${quantity}&valor=${total}`;
-}
+  let minutosRestantes = 8640; // 6 dias
+
+  const countdownEl = document.getElementById('countdown');
+
+  function atualizarCountdown() {
+    if (minutosRestantes <= 0) {
+      countdownEl.innerText = 'Sorteio iniciado';
+      clearInterval(timer);
+      return;
+    }
+
+    // CONVERSÃO
+    const dias = Math.floor(minutosRestantes / 1440);
+    const horas = Math.floor((minutosRestantes % 1440) / 60);
+    const minutos = minutosRestantes % 60;
+
+    let texto = '';
+
+    if (dias > 0) {
+      texto = `${dias} dia${dias > 1 ? 's' : ''}`;
+    } else if (horas > 0) {
+      texto = `${horas} hora${horas > 1 ? 's' : ''}`;
+    } else {
+      texto = `${minutos} minuto${minutos > 1 ? 's' : ''}`;
+    }
+
+    countdownEl.innerText = texto;
+    minutosRestantes--;
+  }
+
+  atualizarCountdown();
+  const timer = setInterval(atualizarCountdown, 60000);
+
+
+
+
 
