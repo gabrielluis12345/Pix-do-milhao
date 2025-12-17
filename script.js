@@ -130,6 +130,38 @@ updateCountdown();
   const timer = setInterval(atualizarCountdown, 60000);
 
 
+// ================= SLIDER AUTOMÁTICO =================
+const slides = document.querySelectorAll(".slides img");
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? "block" : "none";
+  });
+}
+
+// Mostra o primeiro slide ao carregar
+showSlide(currentSlide);
+
+// Funções para os botões
+function next() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prev() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Troca automática a cada 3 segundos (3000 ms)
+setInterval(() => {
+  next();
+}, 3000);
+
+
+
+
 
 
 
