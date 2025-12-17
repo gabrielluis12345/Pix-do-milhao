@@ -1100,6 +1100,32 @@ header,
 
 
 
+/* =====================================
+   ALINHAMENTO GLOBAL DAS SEÇÕES
+   ===================================== */
+
+/* container padrão igual banner/ganhadores */
+.container-padrao {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* aplica à AÇÃO 2 */
+.produto-card {
+  max-width: 420px;
+  margin: 40px 0; /* remove centralização */
+}
+
+/* garante que fique alinhada à esquerda do container */
+.produto-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+
+
 
 
 
