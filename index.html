@@ -15,51 +15,7 @@
         <img src="logopix-removebg-preview.png" class="logo">
     </header>
 
-    <!-- CONTADOR -->
-    <section class="countdown">
-        <span class="label">PRÓXIMO SORTEIO EM:</span>
-
-        <div class="timer">
-            <div class="time-box">
-                <span id="hours">22</span>
-                <small>HORAS</small>
-            </div>
-
-            <div class="time-box">
-                <span id="minutes">25</span>
-                <small>MINUTOS</small>
-            </div>
-
-            <div class="time-box">
-                <span id="seconds">12</span>
-                <small>SEGUNDOS</small>
-            </div>
-        </div>
-
-        <span class="date">16/12/2025 às 21:00</span>
-    </section>
-
-
-    <!-- FAIXA AZUL ROLANDO -->
-    <div class="marquee">
-        <div class="marquee-track">
-            <div class="marquee-content">
-                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
-                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
-                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
-                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
-            </div>
-
-            <!-- DUPLICADO -->
-            <div class="marquee-content">
-                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
-                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
-                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
-                🚨 CONCORRA A 40 MIL REAIS AMANHÃ! 🚨
-            </div>
-        </div>
-    </div>
-
+   
 
 
     <!-- CONTEÚDO PRINCIPAL -->
@@ -107,6 +63,85 @@
 
 
     </section>
+
+    <!-- ================= PRODUTO DE BAIXO ================= -->
+    <section class="produto-card">
+
+  <!-- HEADER -->
+  <div class="produto-header">
+  <div class="header-left">
+    <div class="logopremio">
+      <img src="logo_premiada.png" alt="Terça Premiada">
+    </div>
+    <h1>Terça Premiada</h1>
+  </div>
+
+  <span class="subtitle">
+    Prêmios toda terça com chances que cabem no seu bolso.
+  </span>
+</div>
+
+  <!-- BANNER -->
+  <div class="produto-banner">
+    <img src="WID PREMIADA.PNG" alt="Terça Premiada">
+  </div>
+
+  <!-- INFO AMARELA -->
+<div class="info-row">
+    <div class="info-box">
+        <span>Edição nº</span>
+        <strong>004</strong>
+    </div>
+    <div class="info-box">
+        <span>Sorteio em</span>
+        <strong id="countdown">17 minutos</strong>
+    </div>
+</div>
+
+  <!-- DETALHES -->
+  <div class="produto-detalhes">
+    <div>
+      <span class="label">HOJE</span>
+      <p class="valor">ÀS 21:00</p>
+    </div>
+    <div>
+      <span class="label">VALOR</span>
+      <p class="valor amarelo">R$ 0,20</p>
+    </div>
+  </div>
+
+  <p class="produto-desc">
+    Terça Premiada PDM - 16/12/2025 - ED 004
+  </p>
+
+  <!-- BOTÕES (FUNÇÕES ORIGINAIS) -->
+  <div class="quantidade-botoes">
+    <button onclick="addQty('bottom',5)">+5</button>
+
+    <button class="popular-btn" onclick="addQty('bottom',10)">
+      <span class="tag-popular">POPULAR</span>
+      +10
+    </button>
+
+    <button onclick="addQty('bottom',15)">+15</button>
+    <button onclick="addQty('bottom',50)">+50</button>
+    <button onclick="addQty('bottom',100)">+100</button>
+  </div>
+
+  <!-- CONTADOR (FUNÇÕES ORIGINAIS) -->
+  <div class="qty">
+    <button onclick="changeQty('bottom',-1)">-</button>
+    <span id="qty-bottom">50</span>
+    <button onclick="changeQty('bottom',1)">+</button>
+  </div>
+
+  <!-- COMPRAR (FUNÇÃO ORIGINAL) -->
+  <button class="buy" onclick="irCheckout('bottom')">
+    🛒 COMPRAR
+    <span id="price-bottom">R$ 10,00</span>
+  </button>
+
+</section>
 
     <footer class="footer">
 
@@ -163,6 +198,7 @@
 </body>
 
 </html>
+
 
 
 
