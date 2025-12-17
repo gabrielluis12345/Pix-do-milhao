@@ -63,36 +63,8 @@ function irCheckout(key) {
 updateUI("top");
 updateUI("bottom");
 
-// ============================
-// CONTADOR (H:M:S)
-// ============================
+// CONTADOR AÇAO 2
 
-const targetDate = new Date("2025-12-16T21:00:00");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
-
-function updateCountdown() {
-  const now = new Date();
-  const diff = targetDate - now;
-
-  if (diff <= 0) {
-    hoursEl.innerText = "00";
-    minutesEl.innerText = "00";
-    secondsEl.innerText = "00";
-    return;
-  }
-
-  const totalSeconds = Math.floor(diff / 1000);
-  hoursEl.innerText = String(Math.floor((totalSeconds / 3600) % 24)).padStart(2, "0");
-  minutesEl.innerText = String(Math.floor((totalSeconds / 60) % 60)).padStart(2, "0");
-  secondsEl.innerText = String(totalSeconds % 60).padStart(2, "0");
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-// ================= CONTADOR AÇÃO 2 =================
 let minutosRestantes = 8640; // 6 dias
 const countdownEl = document.getElementById('countdown-bottom');
 
@@ -120,10 +92,9 @@ function atualizarCountdown() {
     minutosRestantes--;
 }
 
-// Atualiza imediatamente
 atualizarCountdown();
-// Atualiza a cada 1 minuto
 const timer = setInterval(atualizarCountdown, 60000);
+
 
 
 // ================= SLIDER AUTOMÁTICO =================
@@ -131,30 +102,32 @@ const slidesContainer = document.querySelector(".slides");
 const slides = slidesContainer.querySelectorAll("img");
 let currentSlide = 0;
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.style.display = i === index ? "block" : "none";
-  });
+function updateSlide() {
+    const slideWidth = slides[0].clientWidth; // pega largura da imagem
+    slidesContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
-
-// Inicializa o slider
-showSlide(currentSlide);
 
 // Botões
 function next() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlide();
 }
 
 function prev() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlide();
 }
 
-// Troca automática a cada 3 segundos
-setInterval(() => {
-  next();
-}, 2000);
+// Inicializa
+updateSlide();
+
+// Troca automática a cada 2 segundos
+setInterval(next, 2000);
+
+// Ajuste quando a janela for redimensionada (mobile/desktop)
+window.addEventListener("resize", updateSlide);
+
+
 
 
 
