@@ -1046,6 +1046,61 @@ body {
 }
 
 
+/* =====================================
+   CORREÇÃO GERAL – ISOLAMENTO DE SEÇÕES
+   ===================================== */
+
+/* ---------- LIMITA GANHADORES AO CENTRO ---------- */
+.secao-ganhadores {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+}
+
+/* ---------- IMPEDE VAZAMENTO DE .valor ---------- */
+.produto-card .valor {
+  position: static;
+}
+
+.ganhador-card .valor {
+  position: absolute;
+}
+
+/* ---------- ISOLA BOTÕES DO PRODUTO ---------- */
+.produto-card .options,
+.produto-card .qty,
+.produto-card .buy {
+  width: 100%;
+}
+
+/* ---------- GARANTE LARGURA CORRETA DO PRODUTO ---------- */
+.produto-card {
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto;
+}
+
+/* ---------- DESKTOP: mantém alinhado ---------- */
+@media (min-width: 1024px) {
+  .produto-card {
+    margin-left: 40px;
+    margin-right: auto;
+  }
+}
+
+/* ---------- CORRIGE HEADER INVADIDO ---------- */
+header,
+.main,
+.produto-card,
+.secao-ganhadores,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
 
 
 
